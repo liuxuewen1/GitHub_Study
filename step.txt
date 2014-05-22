@@ -1,0 +1,46 @@
+github_Study
+============
+
+学习github
+
+1 
+
+配置电脑ssh 
+$ ssh-keygen -t rsa -C "your_email@youremail.com" 
+
+输入你的passphrase（密码） 回车确认
+
+密钥在C盘 .ssh 文件夹下，打开id_rsa.pub 全部复制，在github网站下创建一个SSH Public Keys
+
+测试设置是否正确
+$ ssh -T git@github.com
+
+输入 yes 
+
+输入前面设置的passphrase 回车，提示登录成功就Ok
+
+
+2
+
+本地设置Git信息
+
+设置用户名、邮箱
+$ git config --global user.name "Firstname Lastname"
+
+$ git config --global user.email "your_email@youremail.com"
+
+此处用户名为实际姓名（自定义的）
+
+3
+
+先在GitHub上创建一个项目库 Repository
+然后在本地对应创建一个相同项目名称的目录，依次执行下列命令：
+$ mkdir ~/Helloworld  创建以Helloworld为名的文件夹
+$ cd Helloworld 进入该文件夹中 、如果进去要出来进Tank文件夹，$ cd ~/Tank
+
+$ git init //Git初始化文件夹
+$ touch name_file 建立名为name_file的文件（可以直接在文件夹下面建立文件）
+$ git add name_file //——不但是用来添加不在版本控制中的新文件，也用于添加已在版本控制中但是刚修改过的文件; 在这两种情况下, Git都会获得当前文件的快照并且把内容暂存(stage)到索引中，为下一次commit做好准备。Git跟踪的是内容不是文件。（如果要添加或修改多个 $ git add .）
+$ git commit -m '提交的desc 描述' 
+$ git remote add origin git@github.com:liuxuewen1/Helloworld.git  //提交
+$ git push -u origin master //推送到gitHub
