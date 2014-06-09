@@ -141,7 +141,12 @@ $ git merge master
 $ git reset HEAD a.txt
 
 
+----------------------------------2014.06.09获取远程分支文件----------------------------------------------------
+将远程分支信息获取到：
+$ git fetch
 
+然后再将远程分支remote_branchname映射到本地命名为local-branchname  的一分支：
+$ git checkout -b local-branchname origin/remote_branchname  
 
 
 
